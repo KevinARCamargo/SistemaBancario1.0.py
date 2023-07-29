@@ -41,7 +41,7 @@ while True:
             if deposito > 0:
                 saldo += deposito
                 print(f"\n Depósito realizado com sucesso! Saldo Atual: R${saldo:.2f}") 
-                extrato += f" Operação: Depósito, Valor: {deposito} \n"
+                extrato += f" Operação: Depósito, Valor: {deposito:.2f} \n"
             else:
                 # Tratamento de erro em depósitos
                 print("\n Erro! Valor de depósito inválido")
@@ -56,8 +56,11 @@ while True:
     # Extrato
     elif opcao == "e":
         print("\n **** Extrato ****\n")
-        print(extrato)
-        print(f" Saldo Atual: R$ {saldo:.2f}")
+        if extrato == "":
+            print(" Não foram realizadas movimentações")
+        else:
+            print(extrato)
+            print(f" Saldo Atual: R$ {saldo:.2f}")
 
     #Saque 
     elif opcao == "s":
@@ -74,7 +77,7 @@ while True:
                         if saque <= saldo:
                             saldo -= saque
                             print(f"\n Saque realizado com sucesso! Saldo Atual: R${saldo:.2f}") 
-                            extrato += f" Operação: Saque, Valor: {saque}\n"
+                            extrato += f" Operação: Saque, Valor: {saque:.2f}\n"
                             numero_de_saques += 1
                         else:
                             # Tratamento do erro de saldo insuficiente
