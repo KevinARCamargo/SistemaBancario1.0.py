@@ -61,7 +61,6 @@ while True:
         else:
             print(extrato)
             print(f" Saldo Atual: R$ {saldo:.2f}")
-
     #Saque 
     elif opcao == "s":
         # Loop para que o cliente possa digitar um novo valor em caso de erro no saque
@@ -115,6 +114,10 @@ while True:
             tentar_novamente = "s"
 
     #Saída
-    if opcao == "q":
+    elif opcao == "q":
         print("\n Obrigado por usar nossos serviços!")
         break
+
+    #Verificação de Entradas inesperadas
+    else:
+        print("\n Entrada inválida tente novamente!")
